@@ -12,26 +12,35 @@ class PreviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-            ),
-            Image.asset("asset/images/sign.png"),
-          ],
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 80),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("asset/images/sign.png"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),  
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Container(
         height: 140,
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [secondaryColor, primaryColor]),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(40),
-            topRight: Radius.circular(40),
-          ),
-        ),
+            gradient: LinearGradient(colors: [primaryColor, secondaryColor]),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40), topRight: Radius.circular(40))),
         child: Column(
           children: [
             Column(
@@ -45,26 +54,23 @@ class PreviewPage extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetectionPage(),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetectionPage()));
+                    },
+                    child: Text(
+                      'Mulai Deteksi',
+                      style: GoogleFonts.poppins(
+                        color: secondaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
                       ),
-                    );
-                  },
-                  child: Text(
-                    'Mulai Deteksi',
-                    style: GoogleFonts.poppins(
-                      color: secondaryColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
                     ),
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  ),
-                ),
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(Colors.white)))
               ],
             ),
           ],
