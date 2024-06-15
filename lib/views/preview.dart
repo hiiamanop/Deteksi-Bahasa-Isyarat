@@ -38,7 +38,7 @@ class PreviewPage extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 140,
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [primaryColor, secondaryColor]),
+            gradient: LinearGradient(colors: [secondaryColor, primaryColor]),
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40), topRight: Radius.circular(40))),
         child: Column(
@@ -49,7 +49,7 @@ class PreviewPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    'Deteksi Manggamu!',
+                    'Deteksi Tangqanmu!',
                     style: secondaryTextWhiteStyle,
                   ),
                 ),
